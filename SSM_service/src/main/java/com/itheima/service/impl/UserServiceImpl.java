@@ -60,4 +60,9 @@ public class UserServiceImpl implements UserService {
 
         dao.save(userInfo);
     }
+
+    @Override
+    public UserInfo findById(String id) throws Exception {
+        return dao.findById(id);
+    }
 }
