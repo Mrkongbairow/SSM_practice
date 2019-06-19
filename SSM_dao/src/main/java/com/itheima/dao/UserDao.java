@@ -1,10 +1,7 @@
 package com.itheima.dao;
 
 import com.itheima.domain.UserInfo;
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -23,6 +20,14 @@ public interface UserDao {
             @Result(column = "id", property = "roles", javaType = List.class, many =
             @Many(select = "com.itheima.dao.RoleDao.findRoleByUserId")) })
     public UserInfo findByUsername(String username);
+
+
+    @Select("select * from users")
+    List<UserInfo> findAll();
+
+
+    @Insert("insert into users(email,username,password,phoneNum,status)  values(#{email},#{username},#{password},#{phoneNum},#{status})")
+    void save(UserInfo userInfo);
 }
 
 
