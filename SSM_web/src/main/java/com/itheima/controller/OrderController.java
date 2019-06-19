@@ -43,6 +43,14 @@ public class OrderController {
 
         return vm;
     }
+    @RequestMapping("findById")
+    public ModelAndView findbById(String id){
+        Orders orders = service.findByid(id);
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("orders-show");
+        mv.addObject("orders",orders);
+        return mv;
+    }
 
 
 }

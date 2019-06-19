@@ -8,4 +8,6 @@ import java.util.List;
 public interface OrderService {
 
     List<Orders> findAllByPage(int page,int pageSize);
+
+    Orders findByid(String id);
 }
