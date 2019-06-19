@@ -9,10 +9,10 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 public interface UserDao {
-    @Select("select * from user where id = #{id}")
+    @Select("select * from users where id = #{id}")
     public UserInfo findById(Long id) throws Exception;
 
-    @Select("select * from user where username=#{username}")
+    @Select("select * from users where username=#{username}")
     @Results({
             @Result(id = true, property = "id", column = "id"),
             @Result(column = "username", property = "username"),
