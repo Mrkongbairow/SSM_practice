@@ -1,7 +1,9 @@
 package com.itheima.controller;
 
+import com.itheima.domain.Role;
 import com.itheima.domain.UserInfo;
 import com.itheima.service.UserService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,5 +45,29 @@ public class UserController {
         mv.setViewName("user-show");
         return mv;
     }
+    @RequestMapping("/findUserByIdAndAllRole")
+    public ModelAndView findUserByIdAndAllRole(@RequestParam(name = "id" ,required = true) String Id) throws Exception {
+        //根据Id查找用户
+        UserInfo user = service.findById(Id);
+        //根据userid查找其他角色
+        List<Role> roleList = service.findOtherRole(Id);
+
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("roleList",roleList);
+        mv.addObject("user",user);
+
+        mv.setViewName("user-role-add");
+
+        return mv;
+    }
+
+    @RequestMapping("/addRoleToUser")
+    public String addRoleToUser(String userId,String[] ids){
+        service.addRoleToUser(userId,ids);
+
+        return "redirect:findAll";
+    }
+
+
 
 }

@@ -45,7 +45,7 @@ public class OrderController {
     }
     @RequestMapping("findById")
     public ModelAndView findbById(String id){
-        Orders orders = service.findByid(id);
+        Orders orders = service.findById(id);
         ModelAndView mv = new ModelAndView();
         mv.setViewName("orders-show");
         mv.addObject("orders",orders);

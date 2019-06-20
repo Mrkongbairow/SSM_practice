@@ -9,5 +9,5 @@ public interface OrderService {
 
     List<Orders> findAllByPage(int page,int pageSize);
 
-    Orders findByid(String id);
+    Orders findById(String id);
 }

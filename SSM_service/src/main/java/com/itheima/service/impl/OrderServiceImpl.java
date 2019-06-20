@@ -25,7 +25,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Orders findByid(String id) {
+    public Orders findById(String id) {
         Orders byId = dao.findById(id);
         return byId;
     }
