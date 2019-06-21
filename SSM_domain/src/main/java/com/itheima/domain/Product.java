@@ -1,6 +1,6 @@
 package com.itheima.domain;
 
-import com.itheima.utils.DataUtils;
+import com.itheima.utils.DateUtils;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -62,7 +62,7 @@ public class Product {
 
     public String getDepartureTimeStr() {
         if (departureTime!=null){
-            departureTimeStr = DataUtils.dateToString(departureTime,"yyyy:MM:dd HH:mm:ss");
+            departureTimeStr = DateUtils.dateToString(departureTime,"yyyy:MM:dd HH:mm:ss");
         }
         return departureTimeStr;
     }

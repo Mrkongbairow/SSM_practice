@@ -1,6 +1,6 @@
 package com.itheima.domain;
 
-import com.itheima.utils.DataUtils;
+import com.itheima.utils.DateUtils;
 
 import java.sql.Date;
 import java.util.List;
@@ -60,7 +60,7 @@ public class Orders {
 
     public String getOrderTimeStr() {
         if (orderTime != null){
-            orderTimeStr = DataUtils.dateToString(orderTime,"yyyy:MM:dd HH:mm");
+            orderTimeStr = DateUtils.dateToString(orderTime,"yyyy:MM:dd HH:mm");
         }
             return orderTimeStr;
     }

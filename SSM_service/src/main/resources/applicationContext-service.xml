@@ -4,50 +4,28 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans.xsd
-	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd
-	http://www.springframework.org/schema/aop
-	http://www.springframework.org/schema/aop/spring-aop.xsd
-	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx.xsd">
+			    http://www.springframework.org/schema/beans/spring-beans.xsd
+			    http://www.springframework.org/schema/context
+			    http://www.springframework.org/schema/context/spring-context.xsd
+			    http://www.springframework.org/schema/aop
+			    http://www.springframework.org/schema/aop/spring-aop.xsd
+			    http://www.springframework.org/schema/tx
+			    http://www.springframework.org/schema/tx/spring-tx.xsd
+			    http://www.springframework.org/schema/mvc
+			    http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
 
-    <!--开启注解扫描dao和service-->
+
+<!--开启注解扫描dao和service-->
     <context:component-scan base-package="com.itheima.service">
     </context:component-scan>
-    <!--<context:component-scan base-package="com.itheima.dao">
-    </context:component-scan>
-
-    &lt;!&ndash;加载数据库配置文件&ndash;&gt;
-    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
-    &lt;!&ndash;配置连接池&ndash;&gt;
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${jdbc.driver}"></property>
-        <property name="jdbcUrl" value="${jdbc.url}"></property>
-        <property name="user" value="${jdbc.username}"></property>
-        <property name="password" value="${jdbc.password}"></property>
-    </bean>
-
-    &lt;!&ndash;使用spring框架管理SqlsessionFactory&ndash;&gt;
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        &lt;!&ndash;注入datasource&ndash;&gt;
-        <property name="dataSource" ref="dataSource"></property>
-        <property name="typeAliasesPackage" value="com.itheima.domain"></property>
-    </bean>
-
-    &lt;!&ndash;扫描dao接口 获取代理对象&ndash;&gt;
-    <bean class="org.mybatis.spring.dao.MapperScannerConfigurer">
-        <property name="basePackage" value="com.itheima.dao"></property>
-    </bean>-->
 
 
-    <!--配置spring事务声明管理配置事务管理器-->
-    <!--<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="dataSource"></property>
-    </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
--->
+
+
+
+
 </beans>

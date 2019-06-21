@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class DataUtils  {
+public class DateUtils {
 
     //字符串类型转日期
     public static Date  strToDate( String data, String partt ) throws ParseException {

@@ -28,7 +28,7 @@
     <!-- 开启注解驱动-->
     <mvc:annotation-driven/>
 
-    <!-- ？？？？？？？？？？？
+    <!--
 		支持AOP的注解支持，AOP底层使用代理技术
 		JDK动态代理，要求必须有接口
 		cglib代理，生成子类对象，proxy-target-class="true" 默认使用cglib的方式
